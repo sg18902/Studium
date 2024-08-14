@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/studium/auth/login', {
+      const response = await axios.post('https://studium-jz7b.vercel.app//studium/auth/login', {
         email,
         password,
       });
