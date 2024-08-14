@@ -36,7 +36,7 @@ const StudentTimeTableView = () => {
             return;
         }
         try {
-            const response = await axios.get(`/studium/classrooms/get_classroom_by_id/${classroomid}`);
+            const response = await axios.get(`https://studium-cyan.vercel.app/studium/classrooms/get_classroom_by_id/${classroomid}`);
             setClassroom(response.data[0]);
         } catch (error) {
             console.error('Error fetching classroom:', error);
@@ -53,7 +53,7 @@ const StudentTimeTableView = () => {
         console.log(classroomid)
         if (classroomid === 'null') return;
         try {
-            const response = await axios.get(`/studium/timetables/${classroomid}`);
+            const response = await axios.get(`https://studium-cyan.vercel.app/studium/timetables/${classroomid}`);
             console.log(response.data);
             setTimetable(response.data || []); // Ensure timetable is an array
         } catch (error) {

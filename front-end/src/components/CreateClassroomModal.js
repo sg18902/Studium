@@ -17,7 +17,7 @@ const CreateClassroomModal = ({ open, onClose }) => {
 
     const fetchFreeTeachers = async () => {
         try {
-            const response = await axios.get('/studium/users/view_free_teachers');
+            const response = await axios.get('https://studium-cyan.vercel.app/studium/users/view_free_teachers');
             setFreeTeachers(response.data);
         } catch (error) {
             console.error('Error fetching free teachers:', error);
@@ -31,7 +31,7 @@ const CreateClassroomModal = ({ open, onClose }) => {
 
     const fetchFreeStudents = async () => {
         try {
-            const response = await axios.get('/studium/users/view_free_students');
+            const response = await axios.get('https://studium-cyan.vercel.app/studium/users/view_free_students');
             setFreeStudents(response.data);
         } catch (error) {
             console.error('Error fetching free students:', error);
@@ -73,7 +73,7 @@ const CreateClassroomModal = ({ open, onClose }) => {
         }
 
         try {
-            await axios.post('/studium/classrooms/create_classroom', {
+            await axios.post('https://studium-cyan.vercel.app/studium/classrooms/create_classroom', {
                 name,
                 schedule,
                 teacher,

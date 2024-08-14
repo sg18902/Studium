@@ -48,7 +48,7 @@ const CreateUserModal = ({ open, onClose, roletype }) => {
         }
 
         try {
-            await axios.post('/studium/users/create_new_user', {
+            await axios.post('https://studium-cyan.vercel.app/studium/users/create_new_user', {
                 name,
                 email,
                 phone,

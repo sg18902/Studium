@@ -33,7 +33,7 @@ const TeacherTable = () => {
 
     const fetchTeachers = async () => {
         try {
-            const response = await axios.get('/studium/users/view_by_role/Teacher');
+            const response = await axios.get('https://studium-cyan.vercel.app/studium/users/view_by_role/Teacher');
             setTeachers(response.data);
         } catch (error) {
             console.error('Error fetching teachers:', error);
@@ -79,7 +79,7 @@ const TeacherTable = () => {
             return; // Exit the function if the user cancels the confirmation
         }
         try {
-            await axios.delete(`/studium/users/delete_user/${id}`);
+            await axios.delete(`https://studium-cyan.vercel.app/studium/users/delete_user/${id}`);
             fetchTeachers();
         } catch (err) {
             alert("Failed to delete the user. Please try again.")

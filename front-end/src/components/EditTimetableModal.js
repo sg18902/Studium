@@ -103,7 +103,7 @@ const EditTimetableModal = ({ open, onClose, classroom, timetable }) => {
         
           try {
             // Make API request to save the timetable
-            await axios.put(`/studium/timetables/update_timetable/${timetable[0]?._id}`, payload);
+            await axios.put(`https://studium-cyan.vercel.app/studium/timetables/update_timetable/${timetable[0]?._id}`, payload);
             console.log('Timetable saved successfully');
             onClose(); // Close the modal
           } catch (error) {

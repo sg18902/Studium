@@ -49,7 +49,7 @@ const EditUserModal = ({ open, onClose, user }) => {
         }
 
         try {
-            await axios.put(`/studium/users/update_user/${user?._id}`, {
+            await axios.put(`https://studium-cyan.vercel.app/studium/users/update_user/${user?._id}`, {
                 name,
                 email,
                 phone,

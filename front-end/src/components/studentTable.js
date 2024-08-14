@@ -37,9 +37,9 @@ const StudentTable = () => {
             console.log(classroom);
             let response;
             if (classroom !== 'null') {
-                response = await axios.get(`/studium/users/view_by_classroom/${classroom}`);
+                response = await axios.get(`https://studium-cyan.vercel.app/studium/users/view_by_classroom/${classroom}`);
             } else if (role !== 'Student'){
-                response = await axios.get('/studium/users/view_by_role/Student');
+                response = await axios.get('https://studium-cyan.vercel.app/studium/users/view_by_role/Student');
             }
             setStudents(response.data);
         } catch (error) {
@@ -65,7 +65,7 @@ const StudentTable = () => {
             return; // Exit the function if the user cancels the confirmation
         }
         try {
-            await axios.delete(`/studium/users/delete_user/${id}`);
+            await axios.delete(`https://studium-cyan.vercel.app/studium/users/delete_user/${id}`);
             fetchStudents();
         } catch (err) {
             alert("Failed to delete the user. Please try again.")

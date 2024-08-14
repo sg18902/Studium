@@ -29,7 +29,7 @@ const PrincipalTimetableEdit = ({ open, onClose, classroomid }) => {
         const fetchTimetable = async () => {
             if (classroomid === 'null') return;
             try {
-                const response = await axios.get(`/studium/timetables/${classroomid}`);
+                const response = await axios.get(`https://studium-cyan.vercel.app/studium/timetables/${classroomid}`);
                 setTimetable(response.data || []); // Ensure timetable is an array
             } catch (error) {
                 console.error('Error fetching timetable:', error);
@@ -45,7 +45,7 @@ const PrincipalTimetableEdit = ({ open, onClose, classroomid }) => {
                 return;
             }
             try {
-                const response = await axios.get(`/studium/classrooms/get_classroom_by_id/${classroomid}`);
+                const response = await axios.get(`https://studium-cyan.vercel.app/studium/classrooms/get_classroom_by_id/${classroomid}`);
                 setClassroom(response.data[0]);
             } catch (error) {
                 console.error('Error fetching classroom:', error);
@@ -136,7 +136,7 @@ const PrincipalTimetableEdit = ({ open, onClose, classroomid }) => {
         
           try {
             // Make API request to save the timetable
-            await axios.put(`/studium/timetables/update_timetable/${timetable[0]?._id}`, payload);
+            await axios.put(`https://studium-cyan.vercel.app/studium/timetables/update_timetable/${timetable[0]?._id}`, payload);
             console.log('Timetable saved successfully');
             onClose(); // Close the modal
           } catch (error) {

@@ -24,7 +24,7 @@ const ClassroomTable = () => {
 
   const fetchClassrooms = async () => {
     try {
-      const response = await axios.get('/studium/classrooms/view_all_classrooms');
+      const response = await axios.get('https://studium-cyan.vercel.app/studium/classrooms/view_all_classrooms');
       setClassrooms(response.data);
     } catch (error) {
       console.error('Error fetching classrooms:', error);
