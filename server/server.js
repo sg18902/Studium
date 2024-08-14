@@ -12,13 +12,13 @@ connectDB();
 // Middleware
 app.use(express.json()); // for parsing application/json
 
-// // CORS Configuration
-// const corsOptions = {
-//     origin: 'http://localhost:3000',
-//     methods: 'GET,POST,PUT,DELETE',
-//     allowedHeaders: 'Content-Type,Authorization',
-//   };
-//   app.use(cors(corsOptions)); 
+// CORS Configuration
+const corsOptions = {
+    origin: '*',
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization',
+  };
+  app.use(cors(corsOptions)); 
 
 // Routes
 app.use('/studium/users', require('./routes/userRoutes'));
